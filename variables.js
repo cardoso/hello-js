@@ -107,9 +107,30 @@ In short:
   const obj = { property: "foo" }
   obj.property = "bar";
 
-  console.log(obj);
+  console.log(obj); // prints { property: 'bar' }
 
   // it's just the variable that points to the object that can't be reassigned
   //obj = { numbers: [1, 2, 3] };
   //TypeError: Assignment to constant variable.
 }
+
+/* PlayStation 2: lists can also have their content changed even if the variable
+that holds it is const.
+*/
+{
+  const list = [1, 2, 3];
+  list[0] = "bar";
+  list.push({a: 1});
+
+  console.log(list);  // prints [ 'bar', 2, 3, { a: 1 } ]
+
+  // Again, it's just the variable that points to the list that can't be reassigned
+  //list = [];
+  //TypeError: Assignment to constant variable.
+}
+
+/*  SOURCES:
+
+https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75#.21kk4r11l
+http://softwareengineering.stackexchange.com/questions/278652/how-much-should-i-be-using-let-vs-const-in-es6
+*/
