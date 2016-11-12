@@ -112,6 +112,17 @@ In short:
   // it's just the variable that points to the object that can't be reassigned
   //obj = { numbers: [1, 2, 3] };
   //TypeError: Assignment to constant variable.
+
+  // to make a truly immutable object use Object.freeze:
+  const immutable = Object.freeze({a: 'unchangeable', b: { c: 'changeable'}});
+  immutable.a = "this won't work";
+  console.log(immutable.a);
+  /* NOTE: Object.freeze unfortunately does not produce runtime error,
+    It will simply ignore any reassignment. But it is also shallow: objects
+    inside frozen objects can have their properties changed.
+  */
+  immutable.b.c = "this will work";
+  console.log(immutable.b.c)
 }
 
 /* PlayStation 2: lists can also have their content changed even if the variable
