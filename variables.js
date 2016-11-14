@@ -57,7 +57,7 @@ var allows multiple declarations of the same identifier in the same scope: */
 }
 
 // SCOPES
-// var is UNAWARE of scopes!! (TERRIBLE)
+// var is UNAWARE of scopes* (see PS4)!! (TERRIBLE)
 {
   var x = "won't be printed"
   {
