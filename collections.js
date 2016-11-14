@@ -13,9 +13,15 @@ array.a = "wtf";
 log(array.a); // prints wtf
 log(array["a"]); // prints wtf >.<
 
+if("a" in array) { // checks if array has key
+  log("this will be printed");
+}
+
 log(array["0"]); // PRINTS 1 WTF!! "0" = 0?
 
 console["log"]("javascript is weird");
+
+
 
 // built-in methods:
 
@@ -63,9 +69,11 @@ Any value (both objects and primitive values) may be used as either a key or a v
     log(map[v]);
   }
 
-  for(let [k, v] in map.entries()) {
-    log(k, v);
+  if("name" in map) { // checks if map contains name key
+    console.log("this will be printed")
   }
+
+
 
   map.NaN = 1; // lol
   map.null = 3; // lol
