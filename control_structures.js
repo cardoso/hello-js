@@ -30,8 +30,8 @@ console.log("WHILE:");
 console.log("DO WHILE:");
 {
   let x = 0;
-  do {
-    console.log("x = ", x, "(x < 10)");
+  do { //  this block is run once whether x < 10 or not
+      console.log("x = ", x);
     x++;
   }
   while (x < 10)
