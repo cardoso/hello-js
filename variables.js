@@ -74,7 +74,6 @@ var allows multiple declarations of the same identifier in the same scope: */
   console.log(y);
 }
 // like let, const is AWARE of scopes.
-// and also unlike 'var', it is aware of scopes.
 {
   const z = "will be printed"
   {
@@ -140,8 +139,19 @@ that holds it is const.
   //TypeError: Assignment to constant variable.
 }
 
+/* PS3: var is aware of scopes if the scope is a function or a file, but not
+blocks */
+function printvarx() {
+  var x = "x";
+  console.log(x); // prints x
+}
+printvarx();
+console.log(x); // prints something else
+
+
 /*  SOURCES:
 
 https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75#.21kk4r11l
 http://softwareengineering.stackexchange.com/questions/278652/how-much-should-i-be-using-let-vs-const-in-es6
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block
 */
